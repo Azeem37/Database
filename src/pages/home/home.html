@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="back" padding>
+  <ion-item class="btn">
+    <ion-label stacked>What's your name?</ion-label>
+    <ion-input [(ngModel)]="developer.name" placeholder="Developer Name"></ion-input>
+  </ion-item>
+  <ion-item class="btn">
+    <ion-label stacked>What's your special skill?</ion-label>
+    <ion-input [(ngModel)]="developer.skill" placeholder="Special Skill"></ion-input>
+  </ion-item>
+  <ion-item class="btn">
+    <ion-label stacked>How long have you been working?</ion-label>
+    <ion-input [(ngModel)]="developer.yearsOfExperience" placeholder="Years of experience"></ion-input>
+  </ion-item>
+  
+  <ion-row>
+    <button ion-button outline color="light" (click)="addDeveloper()">Add Developer Info</button>
+    <button ion-button outline color="light" (click)="view()">View</button>
+    <button ion-button outline color="light" (click)="desk()">Desk</button>
+  </ion-row>
+ 
+<div *ngIf="detail">
+  <ion-list>
+    <ion-item *ngFor="let dev of developers" class="btn">
+      <h2>{{ dev.name }}</h2>
+      <p>{{ dev.yearsOfExperience }} years of {{ dev.skill }} Experience!</p>
+    </ion-item>
+  </ion-list>
+</div>
+
+</ion-content>
